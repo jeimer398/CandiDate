@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+   
+   <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+//black box code used for fancy scrolling, taken from internet
+$(function() {
+  $('a[href*=#]:not([href=#])').click(function() { 
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
+});
+</script>
+      <title>Bootstrap Test</title>
+      <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+      <style>
+.parallax { 
+    /* The image used */
+    background-image: url(file:///C:/Users/Jordan/Desktop/HackAE/Candi-date/bootstrap-3.3.7-dist/flag.jpg);
+    /* Set a specific height */
+    height: 500px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.title {
+   color: white;
+}
+.jumbotron{
+   height: 50em;
+}
+.content{
+   font-size: 5em;
+}
+.nav>li {
+    display: inline-block;
+}
+.navbar-header{
+   display: inline-block;
+}
+</style>
+   </head>
+   
+   <body>
+      <nav class = "navbar navbar-default navbar-fixed-top" role = "navigation"> <!-- navbar -->
+   
+   <div class = "navbar-header">
+      <a class = "navbar-brand" href = "#">Candi-Date</a>
+   </div>
+   
+   <div>
+      <ul class = "nav navbar-nav">
+
+         <li><a href = "#top" class>Home</a></li>
+         <li><a href = "#middle">About</a></li>
+         <li><a href = "#bottom">Main</a></li>
+      </ul>
+   </div>
+   
+</nav>
+
+<div class="parallax">
+      <div class="top"></div>
+      <h1 class="title" id = "top">.</h1>
+      <div class="container">
+         <div class="jumbotron">
+            <h1>Home</h1>
+            <div class="content">
+            <p>
+            Lorem ipsum dolor sit amet, ex accusata theophrastus nec. Dicit quodsi voluptatum has ne, cu facer nulla salutandi quo. Mel ei integre noluisse honestatis. Oratio mandamus pri ex. Ea enim omnes adipisci mea. Eum ullum summo error no, in recusabo accommodare vix.
+
+            Pro cu dicat maiorum quaestio. Ad aperiri epicurei has, qui ea ignota omittantur. Sumo deserunt democritum cu vim. Vel ei debet tractatos salutandi, vel et voluptua menandri definiebas. Eam id elit invenire.
+            </p>
+            </div>
+         </div>
+      </div>
+      <h1 class="title" id = "middle">.</h1>
+      <div class="container">
+         <div class="jumbotron">
+            <h1>Try it</h1>
+         </div>
+      </div>
+      <h1 class="title" id = "bottom">.</h1>
+      <div class="container">
+         <div class="jumbotron">
+            <h1>About</h1>
+            <div class="content">
+            <p>
+            Lorem ipsum dolor sit amet, ex accusata theophrastus nec. Dicit quodsi voluptatum has ne, cu facer nulla salutandi quo. Mel ei integre noluisse honestatis. Oratio mandamus pri ex. Ea enim omnes adipisci mea. Eum ullum summo error no, in recusabo accommodare vix.
+
+            Pro cu dicat maiorum quaestio. Ad aperiri epicurei has, qui ea ignota omittantur. Sumo deserunt democritum cu vim. Vel ei debet tractatos salutandi, vel et voluptua menandri definiebas. Eam id elit invenire.
+            </p>
+            </div>
+         </div>
+      </div>
+</div>
+      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+      <script src = "https://code.jquery.com/jquery.js"></script>
+      
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   </body>
+</html>
