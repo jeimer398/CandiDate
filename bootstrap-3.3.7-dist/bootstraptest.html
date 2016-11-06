@@ -187,76 +187,80 @@ $(function() {
     img1 = img1.substring(img1.lastIndexOf("/")+1);
 
     if (img1 == "Trump.png"){
-      window.location= "https://www.donaldjtrump.com/";
+      window.open("https://www.donaldjtrump.com/");
     }
     if (img1 == "hillary.png"){
-      window.location="https://www.hillaryclinton.com/";
+      window.open("https://www.hillaryclinton.com/");
     }
     if (img1 == "charles.png"){
-      window.location="http://chuckschumer.com";
+      window.open("http://chuckschumer.com");
     }
     if (img1 == "stein.png"){
-      window.location = "http://www.jill2016.com/";
+      window.open( "http://www.jill2016.com/");
     }
     if (img1 == "wendy.png"){
-      window.location = "https://wendylong.com/";
+      window.open( "https://wendylong.com/");
     }
     if (img1 == "alex.png"){
-      window.location = "http://alexmercedforny.com/";
+      window.open( "http://alexmercedforny.com/");
     }
     if (img1 == "lee.png"){
-      window.location = "https://zeldin.house.gov/";
+      window.open( "https://zeldin.house.gov/");
     }
     if (img1 == "pete.png"){
-      window.location = "http://peteking.house.gov/";
+      window.open( "http://peteking.house.gov/");
     }
     if (img1 == "Anna.png"){
-      window.location = "http://www.annathrone-holst.com/";
+      window.open( "http://www.annathrone-holst.com/");
     }
     if (img1 == "DuWayne.png"){
-      window.location = "http://duwaynegregory.com/home/";
+      window.open( "http://duwaynegregory.com/home/");
     }
     if (img1 == "jack.png"){
-      window.location = "https://www.nysenate.gov/senators/jack-m-martins";
+      window.open( "https://www.nysenate.gov/senators/jack-m-martins");
     }
     if (img1 == "tom.png"){
-      window.location = "http://suozziforcongress.com/";
+      window.open( "http://suozziforcongress.com/");
     }
     if (img1 == "clarke.png"){
-      window.location = "https://clarke.house.gov/";
+      window.open( "https://clarke.house.gov/");
     }
     if (img1 == "grace.png"){
-      window.location = "https://meng.house.gov/";
+      window.open( "https://meng.house.gov/");
     }
     if (img1 == "hekeem.png"){
-      window.location = "https://jeffries.house.gov/";
+      window.open( "https://jeffries.house.gov/");
     }
     if (img1 == "meeks.png"){
-      window.location = "http://meeks.house.gov/";
+      window.open( "http://meeks.house.gov/");
     }
     if (img1 == "nydia2.png"){
-      window.location = "http://suozziforcongress.com/";
+      window.open( "http://suozziforcongress.com/");
     }
     if (img1 == "rice.png"){
-      window.location = "https://kathleenrice.house.gov/";
+      window.open( "https://kathleenrice.house.gov/");
     }
     if (img1 == "kin.png"){
-      window.location = "https://myersforcongress.com/";
+      window.open( "https://myersforcongress.com/");
     }
     if (img1 == "tenny.png"){
-      window.location = "https://claudiaforcongress.com/";
+      window.open( "https://claudiaforcongress.com/");
     }
   }
 
   function findNew(){
-    var m = Math.floor(Math.random() * 20);
+    var m = Math.floor(Math.random() * myImages1.length);
 
-    if ((document.getElementById("poli").src = myImages1[m]) == null){
+    if ((document.getElementById("poli").src = myImages1[m]) == null && myImages1.length != 0){
       return findNew();
     }
     else{
       document.getElementById("poli").src = myImages1[m]
-      myImages1[m] = null;
+      //myImages1[m] = null;
+      var removed = myImages1.splice(m, 1);
+      if(myImages1.length == 0) {
+        document.getElementById("poli").src = "http://www.thechurchillhotel.com/resourcefiles/attractionsmallimages/the-white-house-at-dc-th.jpg";
+      }
     }
   }
 
