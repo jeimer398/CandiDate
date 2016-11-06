@@ -108,10 +108,10 @@ $(function() {
                             A Tinder Inspired Politician Database
                             </h2>
                             <img src="http://www.thechurchillhotel.com/resourcefiles/attractionsmallimages/the-white-house-at-dc-th.jpg" id='poli' style="position: absolute; right: 37%; width: 500px; background-color: white; height: 500px; border: solid; top:70em">
-                            <button onclick="yes()" style=" position: absolute; width: 10%; height: 70px; top: 800px; right: 300px; background-color: green; padding-bottom: 10px;  font-size: 30px; top:50em;">
+                            <button onclick="openWebsite()" style=" position: absolute; width: 10%; height: 70px; top: 800px; right: 300px; background-color: green; padding-bottom: 10px;  font-size: 30px; top:50em;">
                             vote yes
                             </button>
-                            <button onclick="no()" style=" position: absolute; width: 10%; height: 70px; top: 800px; left: 300px; background-color: red; padding-bottom: 10px;  font-size: 30px; top:50em;">
+                            <button onclick="findNew()" style=" position: absolute; width: 10%; height: 70px; top: 800px; left: 300px; background-color: red; padding-bottom: 10px;  font-size: 30px; top:50em;">
                             vote no
                             </button>
       </div>
@@ -181,15 +181,11 @@ $(function() {
         myImages1[13] = "grace.png";
         myImages1[14] = "hekeem.png";
         myImages1[15] = "meeks.png";
-        myImages1[16] = "nydia.png";
+        myImages1[16] = "nydia2.png";
         myImages1[17] = "rice.png";
+        myImages[18] = "kin.png";
+        myImages[19] = "tenny.png"
 
-  function yes(){
-    openWebsite();
-  }
-  function no(){
-    findNew();
-    }
   function openWebsite(){
     var img1 = document.getElementById("poli").src;
     img1 = img1.substring(img1.lastIndexOf("/")+1);
@@ -242,25 +238,30 @@ $(function() {
     if (img1 == "meeks.png"){
       window.location = "http://meeks.house.gov/";
     }
-    if (img1 == "nydia.png"){
+    if (img1 == "nydia2.png"){
       window.location = "http://suozziforcongress.com/";
     }
     if (img1 == "rice.png"){
       window.location = "https://kathleenrice.house.gov/";
     }
+    if (img1 == "kin.png"){
+      window.location = "https://myersforcongress.com/";
+    }
+    if (img1 == "tenny.png"){
+      window.location = "https://claudiaforcongress.com/";
+    }
   }
 
   function findNew(){
-    var rnd = Math.floor(Math.random() * myImages1.length);
+    var m = Math.floor(Math.random() * 20);
 
-    var img1 = document.getElementById("poli").src;
-    img1 = img1.substring(img1.lastIndexOf("/")+1);
-
-    while(myImages1[rnd] == img1){
-      rnd = Math.floor(Math.random() * myImages1.length);
+    if ((document.getElementById("poli").src = myImages1[m]) == null){
+      return findNew();
     }
-
-    document.getElementById("poli").src = myImages1[rnd];
+    else{
+      document.getElementById("poli").src = myImages1[m]
+      myImages1[m] = null;
+    }
   }
 
 </script>
