@@ -35,6 +35,13 @@ vote no
 </button>
 </body>
 <script>
+	var myImages1 = new Array ();	
+      	myImages1[0] = "http://ichef-1.bbci.co.uk/news/1024/cpsprodpb/1BC2/production/_88160170_trump-promo.jpg";
+      	myImages1[1] = "http://jtf.org/wp-content/uploads/2015/08/hillary-clinton-laughing.jpg";
+     	myImages1[2] = "http://www.technobuffalo.com/wp-content/uploads/2016/03/kanye-west-1280x640.jpg";
+		
+	var img1 = document.getElementById("poli").src;
+		
 	function yes(){
 		openWebsite();
 	}
@@ -54,24 +61,9 @@ vote no
 		}
 		}
 	function findNew(){
-		var myImages1 = new Array ();	
-      		myImages1[1] = "http://ichef-1.bbci.co.uk/news/1024/cpsprodpb/1BC2/production/_88160170_trump-promo.jpg";
-      		myImages1[2] = "http://jtf.org/wp-content/uploads/2015/08/hillary-clinton-laughing.jpg";
-     		myImages1[3] = "http://www.technobuffalo.com/wp-content/uploads/2016/03/kanye-west-1280x640.jpg";
-		
-		var img1 = document.getElementById("poli").src;
-		
-		var rnd = Math.floor( Math.random() * myImages1.length );
-      		if( rnd == 0 ) {
-        		rnd = 1;
-      		}
-
-		if (img1 != myImages1[rnd].src){
-			document.getElementById("poli").src = myImages1[rnd];
+		var rnd = Math.floor(Math.random() * myImages1.length);
+      		
+		document.getElementById("poli").src = myImages1[rnd];
    		}
-		else {
-			findNew();
-     			}
-		}
 </script>
 </html>
