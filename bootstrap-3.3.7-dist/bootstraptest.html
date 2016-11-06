@@ -160,6 +160,10 @@ $(function() {
 <!-- Javascript for switching pictures -->
 
    <script>
+  var red = 0;
+  var blue = 0;
+  var other = 0;
+
   var myImages1 = new Array ();
         myImages1[0] = "Trump.png";
         myImages1[1] = "charles.png";
@@ -179,8 +183,8 @@ $(function() {
         myImages1[15] = "meeks.png";
         myImages1[16] = "nydia2.png";
         myImages1[17] = "rice.png";
-        myImages[18] = "kin.png";
-        myImages[19] = "tenny.png"
+        myImages1[18] = "kin.png";
+        myImages1[19] = "tenny.png"
 
   function openWebsite(){
     var img1 = document.getElementById("poli").src;
@@ -188,64 +192,85 @@ $(function() {
 
     if (img1 == "Trump.png"){
       window.open("https://www.donaldjtrump.com/");
+      red = red + 1;
     }
     if (img1 == "hillary.png"){
       window.open("https://www.hillaryclinton.com/");
+      blue = blue + 1;
     }
     if (img1 == "charles.png"){
       window.open("http://chuckschumer.com");
+      blue = blue + 1;
     }
     if (img1 == "stein.png"){
       window.open( "http://www.jill2016.com/");
+      other = other + 1;
     }
     if (img1 == "wendy.png"){
       window.open( "https://wendylong.com/");
+      red = red + 1;
     }
     if (img1 == "alex.png"){
       window.open( "http://alexmercedforny.com/");
+      other = other + 1;
     }
     if (img1 == "lee.png"){
       window.open( "https://zeldin.house.gov/");
+      red = red + 1;
     }
     if (img1 == "pete.png"){
       window.open( "http://peteking.house.gov/");
+      red = red + 1;
     }
     if (img1 == "Anna.png"){
       window.open( "http://www.annathrone-holst.com/");
+      blue = blue + 1;
     }
     if (img1 == "DuWayne.png"){
       window.open( "http://duwaynegregory.com/home/");
+      blue = blue + 1;
     }
     if (img1 == "jack.png"){
       window.open( "https://www.nysenate.gov/senators/jack-m-martins");
+      red = red + 1;
     }
     if (img1 == "tom.png"){
       window.open( "http://suozziforcongress.com/");
+      blue = blue + 1;
     }
     if (img1 == "clarke.png"){
       window.open( "https://clarke.house.gov/");
+      blue = blue + 1;
     }
     if (img1 == "grace.png"){
       window.open( "https://meng.house.gov/");
+      blue = blue + 1;
     }
     if (img1 == "hekeem.png"){
       window.open( "https://jeffries.house.gov/");
+      blue = blue + 1;
     }
     if (img1 == "meeks.png"){
       window.open( "http://meeks.house.gov/");
+      blue = blue + 1;
     }
     if (img1 == "nydia2.png"){
       window.open( "http://suozziforcongress.com/");
+      blue = blue + 1;
     }
     if (img1 == "rice.png"){
       window.open( "https://kathleenrice.house.gov/");
+      blue = blue + 1;
     }
     if (img1 == "kin.png"){
       window.open( "https://myersforcongress.com/");
+      blue = blue + 1;
     }
     if (img1 == "tenny.png"){
       window.open( "https://claudiaforcongress.com/");
+      red = red + 1;
     }
+    findNew();
   }
 
   function findNew(){
@@ -260,6 +285,15 @@ $(function() {
       var removed = myImages1.splice(m, 1);
       if(myImages1.length == 0) {
         document.getElementById("poli").src = "http://www.thechurchillhotel.com/resourcefiles/attractionsmallimages/the-white-house-at-dc-th.jpg";
+        if (blue > red){
+          alert("You are most likely a democrat.");
+        }
+        else if (red > blue){
+          alert("You are most likely a republican.");
+        }
+        else if (red == blue){
+          alert("You are most likely moderate or a third party supporter.");
+        }
       }
     }
   }
