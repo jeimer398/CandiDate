@@ -177,6 +177,12 @@ $(function() {
         myImages1[9] = "DuWayne.png";
         myImages1[10] = "jack.png";
         myImages1[11] = "tom.png";
+        myImages1[12] = "clarke.png";
+        myImages1[13] = "grace.png";
+        myImages1[14] = "hekeem.png";
+        myImages1[15] = "meeks.png";
+        myImages1[16] = "nydia.png";
+        myImages1[17] = "rice.png";
 
   function yes(){
     openWebsite();
@@ -224,27 +230,37 @@ $(function() {
     if (img1 == "tom.png"){
       window.location = "http://suozziforcongress.com/";
     }
+    if (img1 == "clarke.png"){
+      window.location = "https://clarke.house.gov/";
+    }
+    if (img1 == "grace.png"){
+      window.location = "https://meng.house.gov/";
+    }
+    if (img1 == "hekeem.png"){
+      window.location = "https://jeffries.house.gov/";
+    }
+    if (img1 == "meeks.png"){
+      window.location = "http://meeks.house.gov/";
+    }
+    if (img1 == "nydia.png"){
+      window.location = "http://suozziforcongress.com/";
+    }
+    if (img1 == "rice.png"){
+      window.location = "https://kathleenrice.house.gov/";
+    }
+  }
+
+  function findNew(){
+    var rnd = Math.floor(Math.random() * myImages1.length);
+
+    var img1 = document.getElementById("poli").src;
+    img1 = img1.substring(img1.lastIndexOf("/")+1);
+
+    while(myImages1[rnd] == img1){
+      rnd = Math.floor(Math.random() * myImages1.length);
     }
 
-    function findNew(){
-      var rnd = Math.floor(Math.random() * myImages1.length);
-
-      var img1 = document.getElementById("poli").src;
-      img1 = img1.substring(img1.lastIndexOf("/")+1);
-
-      while(myImages1[rnd] == img1){
-        rnd = Math.floor(Math.random() * myImages1.length);
-      }
-
-      document.getElementById("poli").src = myImages1[rnd];
-}
-
-  function findNew1(){
-    var copy = myImages1.slice(0);
-    var index = Math.floor(Math.random() * copy.length);
-    var item = copy[index].substring(copy.lastIndexOf("/"));
-    copy.splice(index, 1);
-    document.getElementById("poli").src = item;
+    document.getElementById("poli").src = myImages1[rnd];
   }
 
 </script>
