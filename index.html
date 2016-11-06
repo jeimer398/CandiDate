@@ -63,6 +63,10 @@ vote no
 	function findNew(){
 		var rnd = Math.floor(Math.random() * myImages1.length);
       		
+		while(myImages1[rnd] == document.getElementById("poli").src){
+			rnd = Math.floor(Math.random() * myImages1.length);
+		}
+
 		document.getElementById("poli").src = myImages1[rnd];
    		}
 </script>
