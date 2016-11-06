@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
-   
+
    <head>
    <title>CandiDate</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script>
 //black box code used for fancy scrolling, taken from internet
 $(function() {
-  $('a[href*=#]:not([href=#])').click(function() { 
+  $('a[href*=#]:not([href=#])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
       var target = $(this.hash);
       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
@@ -27,10 +27,10 @@ $(function() {
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
       <style>
-.parallax { 
+.parallax {
     /* The image used */
     background-image: url(flag.jpg);
-    /* Set a specific height */ 
+    /* Set a specific height */
     height: 500px;
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
@@ -61,15 +61,15 @@ $(function() {
 }
 </style>
    </head>
-   
+
    <body>
       <nav class = "navbar navbar-default navbar-fixed-top" role = "navigation" style="width:100%;"> <!-- navbar -->
-   
+
    <div class = "navbar-header" style="width:10%;"">
       <a class = "navbar-brand" href = "#">CandiDate</a>
       <img src="hackaelogothing.png" style="width:2em; height:2em; position:absolute; top:.7em">
    </div>
-   
+
    <div>
       <ul class = "nav navbar-nav">
 
@@ -78,7 +78,7 @@ $(function() {
          <li><a href = "#bottom">About</a></li>
       </ul>
    </div>
-   
+
 </nav>
 
 <div><!--class="parallax"-->
@@ -107,16 +107,16 @@ $(function() {
                             <h2 style="position: absolute; right: 25%; top: 125px; text-align: center; width: 50%; height: 110px; background-color: orangered; border-style: outset; border-color: #4169E1; border-width: thick; vertical-align: middle; border-radius: 70px; line-height: 150%; top:28em">
                             A Tinder Inspired Politician Database
                             </h2>
-                             
+
                             <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/300px-Flag_of_the_United_States.svg.png" id='poli' style="position: absolute; right: 20%; width: 60%; background-color: white; height: 500px; border: solid; top:70em">
-                            
+
                             <p style=" position: absolute; width: 20%; height: 100px; top: 790px; right: 60px; padding-bottom: 10px;  font-size: 30px;top:50em;">
                               <img src="Approve.svg.png", alt="check", height=90px, width=90px>
                               </p>
                             <button onclick="yes()" style=" position: absolute; width: 10%; height: 70px; top: 800px; right: 100px; background-color: silver; padding-bottom: 10px;  font-size: 30px; top:50em;">
                             vote yes
                             </button>
-                             
+
                             <p style=" position: absolute; width: 20%; height: 100px; top: 790px; left: 260px; padding-bottom: 10px;  font-size: 30px;top:50em;">
                               <img src="Approve.svg.png", alt="check", height=90px, width=90px>
                               </p>
@@ -140,7 +140,7 @@ $(function() {
       <div class="container">
          <div class="randomthing"> <!-- replace with a different thing later -->
             <p>
-            
+
             </p>
             </div>
          </div>
@@ -148,7 +148,7 @@ $(function() {
 </div>
       <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
       <script src = "https://code.jquery.com/jquery.js"></script>
-      
+
       <!-- Include all compiled plugins (below), or include individual files as needed -->
       <script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
    </body>
@@ -173,13 +173,13 @@ $(function() {
 <!-- Javascript for switching pictures -->
 
    <script>
-  var myImages1 = new Array (); 
-        myImages1[0] = "http://ichef-1.bbci.co.uk/news/1024/cpsprodpb/1BC2/production/_88160170_trump-promo.jpg";
-        myImages1[1] = "http://jtf.org/wp-content/uploads/2015/08/hillary-clinton-laughing.jpg";
-      myImages1[2] = "http://www.technobuffalo.com/wp-content/uploads/2016/03/kanye-west-1280x640.jpg";
-    
-  var img1 = document.getElementById("poli").src;
-    
+  var myImages1 = new Array ();
+        myImages1[0] = "Trump.png";
+        myImages1[1] = "charles.png";
+        myImages1[2] = "hillary.png";
+        myImages1[3] = "stein.png";
+        myImages1[4] = "wendy.png";
+
   function yes(){
     openWebsite();
   }
@@ -188,19 +188,27 @@ $(function() {
     }
   function openWebsite(){
     var img1 = document.getElementById("poli").src;
-    if (img1 == "http://ichef-1.bbci.co.uk/news/1024/cpsprodpb/1BC2/production/_88160170_trump-promo.jpg"){
-      window.location="https://secure.donaldjtrump.com/donate?utm_campaign=djt0810183450_0&utm_medium=ad&utm_source=0_google_text&utm_content=0_trumpbrandedkws&utm_term=0_donor_cpc&gclid=Cj0KEQjwhvbABRDOp4rahNjh-tMBEiQA0QgTGkAvcwQpg5Yg9DjXgvtbglMP73Nb2wzeTJ1oNBcMIU4aAisD8P8HAQ"; 
+    img1 = img1.substring(img1.lastIndexOf("/")+1);
+
+    if (img1 == "Trump.png"){
+      window.location= "https://www.donaldjtrump.com/";
     }
-    if (img1 == "http://jtf.org/wp-content/uploads/2015/08/hillary-clinton-laughing.jpg"){
+    if (img1 == "hillary.png"){
       window.location="https://www.hillaryclinton.com/";
     }
-    if (img1 == "http://www.technobuffalo.com/wp-content/uploads/2016/03/kanye-west-1280x640.jpg"){
-      window.location="https://twitter.com/kanyewest?lang=en";
+    if (img1 == "charles.png"){
+      window.location="http://chuckschumer.com";
+    }
+    if (img1 == "stein.png"){
+      window.location = "http://www.jill2016.com/";
+    }
+    if (img1 == "wendy.png"){
+      window.location = "https://wendylong.com/";
     }
     }
   function findNew(){
     var rnd = Math.floor(Math.random() * myImages1.length);
-          
+
     while(myImages1[rnd] == document.getElementById("poli").src){
       rnd = Math.floor(Math.random() * myImages1.length);
     }
